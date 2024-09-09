@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Company Name</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/output.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+        @font-face {
+            font-family: mono;
+            src: url("/fonts/epilogue.ttf");
+        }
+
+        * {
+            font-family: "Inter";
+        }
+    </style>
+</head>
+
+<body class="md:overflow-hidden bg-[#E9E9E9]">
+    <main class="w-full h-screen md:p-2 flex items-center justify-end">
+        <div class="image  h-full w-0 md:w-[60%]">
+            <img id="look" class="h-full w-full object-cover scale-90" src="/images/ilus.png" alt="ilus">
+        </div>
+        <div class="md:w-[540px]  w-full bg-[#FFFFFF] flex flex-col items-center md:px-16 p-10  h-full md:rounded-3xl">
+            <!-- <img class="h-12" src="logo" alt=""> -->
+            <h1 class="capitalize font-[mono] text-4xl font-semibold mt-6 w-full text-center">Doesn't Have account?</h1>
+            <!-- <h1 class="font-[mono]">Super Admin</h1> -->
+            <p class="font-semibold mt-4 text-black/70 text-sm">Please Fill up Your Details</p>
+            <form action="/superadmin/login" class="flex gap-8  mt-8 flex-col w-full" method="post">
+                <div class="flex flex-col justify-center relative">
+                    <label id="name_label"
+                        class="text-black/40 pointer-events-none font-medium absolute p-2 duration-200 top-[0%]"
+                        for="username">Name</label>
+                    <input class="border-b-[2px] text-xl focus:outline-none  border-black/40 p-2" type="text" id="name"
+                        name="name">
+                </div>
+                <div class="flex flex-col justify-center relative">
+                    <label id="email_label"
+                        class="text-black/40 pointer-events-none font-medium absolute p-2 duration-200 top-[0%]"
+                        for="email">Email</label>
+                    <input class="border-b-[2px] text-xl focus:outline-none  border-black/40 p-2" type="email"
+                        id="email" name="email">
+                </div>
+                <div class="flex flex-col  relative justify-center">
+                    <label id="password_label"
+                        class="text-black/40 pointer-events-none font-medium  p-2 absolute duration-200 top-[0%]"
+                        for="password">Enter Password</label>
+                    <input class="border-b-[2px] focus:outline-none  border-black/40 p-2" type="password" id="password"
+                        name="password">
+
+                </div>
+                <div class="flex flex-col  relative justify-center">
+                    <label id="password_check_label"
+                        class="text-black/40 pointer-events-none font-medium  p-2 absolute duration-200 top-[0%]"
+                        for="password_check">Re-Enter Password</label>
+                    <input class="border-b-[2px] focus:outline-none  border-black/40 p-2" type="password"
+                        id="password_check" name="password_check">
+                    <div class="icon absolute top-1/2 -translate-y-1/2 cursor-pointer px-1 right-0" id="show-pass"><i
+                            class="ri-eye-line text-2xl"></i></div>
+                </div>
+                <input type="submit" value="Log in"
+                    class="font-medium text-lg bg-[#1B1D21] text-white p-3 rounded-full  cursor-pointer">
+            </form>
+            <!-- <p class="text-xs mt-10 text-center">You are a only one superuser Who can enter through this portal!</p> -->
+            <p class="text-sm  w-full mt-2 p-3">Already have account? <a class="text-blue-700 underline" href="/users/login">Login</a></p>
+        </div>
+    </main>
+
+
+    <script>
+        let nameInput = document.getElementById("name")
+        let emailInput = document.getElementById("email");
+        let passwordInput = document.getElementById("password")
+        let passwordCheckInput = document.getElementById("password_check")
+        let name_label = document.getElementById("name_label")
+        let email_label = document.getElementById("email_label")
+        let password_label = document.getElementById("password_label")
+        let password_check_label = document.getElementById("password_check_label")
+        let show_pass = document.getElementById("show-pass")
+        let look = document.getElementById("look")
+
+
+
+
+        // name Input Field Animation
+
+        nameInput.addEventListener("focus", () => {
+            name_label.style.top = `-50%`
+            name_label.style.padding = `0`
+            name_label.style.scale = `0.9`
+        })
+        nameInput.addEventListener("blur", () => {
+            if (!nameInput.value) {
+                name_label.style.top = `0%`
+                name_label.style.padding = `8px`
+                name_label.style.scale = `1`
+            }
+        })
+
+        emailInput.addEventListener("focus", () => {
+            email_label.style.top = `-50%`
+            email_label.style.padding = `0`
+            email_label.style.scale = `0.9`
+        })
+        emailInput.addEventListener("blur", () => {
+            if (!emailInput.value) {
+                email_label.style.top = `0%`
+                email_label.style.padding = `8px`
+                email_label.style.scale = `1`
+            }
+        })
+
+
+
+
+        // Password Input field animation
+
+        passwordInput.addEventListener("focus", () => {
+            password_label.style.top = `-50%`
+            password_label.style.padding = `0`
+            password_label.style.scale = `0.9`
+        })
+        passwordInput.addEventListener("blur", () => {
+            if (!passwordInput.value) {
+                password_label.style.top = `0%`
+                password_label.style.padding = `8px`
+                password_label.style.scale = `1`
+            }
+        })
+
+        passwordCheckInput.addEventListener("focus", () => {
+            password_check_label.style.top = `-50%`
+            password_check_label.style.padding = `0`
+            password_check_label.style.scale = `0.9`
+        })
+        passwordCheckInput.addEventListener("blur", () => {
+            if (!passwordCheckInput.value) {
+                password_check_label.style.top = `0%`
+                password_check_label.style.padding = `8px`
+                password_check_label.style.scale = `1`
+            }
+        })
+
+
+
+
+        //Show/Hide Password Features
+
+        show_pass.addEventListener("click", () => {
+            if (passwordInput.type == "password") {
+                passwordInput.type = "text"
+                passwordCheckInput.type = "text"
+                show_pass.innerHTML = `<i class=" text-2xl ri-eye-off-line"></i>`
+                look.style.transform = `rotateY(180deg)`
+            }
+            else {
+                passwordInput.type = "password"
+                passwordCheckInput.type = "password"
+                show_pass.innerHTML = `<i class="text-2xl ri-eye-line"></i>`
+                look.style.transform = `rotateY(0deg)`
+            }
+        })
+    </script>
+</body>
+
+</html>

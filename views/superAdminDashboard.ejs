@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperAdmin</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/output.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+        @font-face {
+            font-family: mono;
+            src: url("/fonts/epilogue.ttf");
+        }
+
+        * {
+            font-family: "Inter";
+        }
+    </style>
+</head>
+
+<body>
+    <main class="flex w-full h-fit relative ">
+
+        <div class="side-stack p-4 px-8 h-[100vh] w-[10%]  sticky top-0">
+            <div class="h-full w-full py-8 rounded-2xl bg-gray-900 flex flex-col justify-between">
+                <div class="top w-full flex items-center justify-center ">
+                    <img src="https://images.vexels.com/content/283648/preview/pink-rounded-star-9619ee.png"
+                        class="h-9 w-9 " alt="">
+                </div>
+                <div class="center  flex flex-col items-center gap-3">
+                    <a href="#" class="border-b border-gray-700 pb-2"><i
+                            class="ri-microsoft-fill text-3xl text-white"></i></a>
+                    <a href="#"><i class="ri-bar-chart-box-line text-3xl text-white"></i></a>
+                </div>
+                <div class="bottom flex flex-col items-center">
+                    <a href="#" class="img-wrapper rounded-full overflow-hidden h-10 w-10">
+                        <img class="h-full w-full"
+                            src="https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611771.jpg"
+                            alt="avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-stack h-fit w-[90%] p-4">
+            <nav class=" w-full flex justify-between p-2 px-4">
+                <div class="search">
+                    <input type="text" id="search" class="bg-gray-300 rounded-xl p-2 px-3 focus:outline-none"
+                        placeholder="Search">
+                </div>
+                <div class="others flex items-center gap-6">
+                    <a href="#" class="px-2 py-1 bg-gray-300 rounded-xl"><i class="ri-equalizer-2-line text-2xl text-gray-800"></i></a>
+                    <a href="#" class="px-2 py-1 bg-gray-300 rounded-xl"><i class="ri-notification-line text-2xl text-gray-800"></i></a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+</body>
+
+</html>
